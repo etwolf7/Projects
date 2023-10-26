@@ -1,35 +1,35 @@
-# DataScienceGuidedCapstone
+# Pricing Strategy Analysis for Big Mountain Resort
 
-Hello students!
-Welcome to the Data Science Guided Capstone! 
+## Problem Overview:
+Big Mountain Resort aims to counterbalance a recent surge in operating costs by $1,540,000 this season. The challenge is to devise an effective pricing strategy that optimizes capitalization on facility investments.
 
-## Getting Started
+## Resort Overview:
+Nestled amidst the stunning landscapes of Glacier National Park and Flathead National Forest, Big Mountain Resort boasts access to 105 trails. With an annual footfall of 350,000 skiing enthusiasts, the resort seeks guidance on recalibrating ticket prices without compromising value.
 
-Start by forking this repository to your personal GitHub account and cloning the fork to your local machine. 
+## Current Pricing Approach:
+Relying solely on market averages won't suffice for Big Mountain Resort to maximize capitalization and maintain a sustainable edge over competitors.
 
-**Note**: If forking and cloning a repo is new to you and/or github is new to you then it is strongly suggested to use [GitHub desktop](https://desktop.github.com/) and follow instructions in the docs [here](https://docs.github.com/en/free-pro-team@latest/desktop/contributing-and-collaborating-using-github-desktop/cloning-and-forking-repositories-from-github-desktop).
+## Analyzing Scenarios:
+To address the pricing challenge, the resort is exploring several options, including closing underused runs, altering the vertical drop, and expanding snow-making capabilities. A model has been developed to assess the impact of these scenarios on ticket prices and revenue.
 
-From https://github.com/springboard-curriculum/DataScienceGuidedCapstone press the green "code" dropdown and then press "Open with GitHub Desktop". This will fork the springboard repository into your own github account and then clone that fork to your local machine - it is in here that you will do your work and push your changes back to your fork of the repo in your own github account. 
+## Feature Insights:
+Through feature engineering and correlation analysis, it was discovered that factors such as fastQuads, runs, snow making acreage, and vertical drop significantly influence ticket prices. Visitors prioritize guaranteed snow coverage, and the total skiable terrain area is less influential than the area with snow-making capabilities.
 
-You will find the notebooks in the Notebooks/ directory. 
+## Model Development:
+A linear model and a random forest model were considered, with the latter proving more robust during testing and cross-validation. The final model focuses on key features: vertical_drop, Snow Making_ac, total_chairs, fastQuads, Runs, LongestRun_mi, trams, and SkiableTerrain_ac.
 
-You will find instructions on how to complete and submit each step of the Guided Capstone in the course materials. Each subunit will focus on one step of the Capstone, corresponding to a step of the Data Science Method. Find the Jupyter Notebook corresponding to the subunit you are working on, and open it. Follow along as you are guided through the work, and fill in the blanks!
+## Recommendations:
+The model indicates that Big Mountain Resort's current ticket prices are 16.31% lower than predicted. Potential scenarios include increasing ticket prices or reducing costs by closing runs.
 
-When you are done with the notebook, push the changes to your personal GitHub account.
+- Increasing the vertical drop by 150 ft could raise ticket prices by 10.44%, resulting in a revenue increase of $14,811,594.
+- Adding 2 acres of snow making may increase ticket prices by 12%, yielding a revenue increase of $17,068,841.
 
-## Pipenv
+Regarding closing runs, the impact on revenue varies:
 
-The `Pipefile` has all the python dependencies and requirements you should need. So you can use [Pipenv](https://pipenv-fork.readthedocs.io/en/latest/) is you want to create a seperate python enviornment for this project. 
+- Closing one run has no significant impact.
+- Closing 2 runs reduces revenue by $750,000.
+- Closing 3 to 5 runs results in similar revenue loss.
+- Closing 10 runs reduces revenue by $3 million.
 
-To install pipenv see [here](https://pipenv-fork.readthedocs.io/en/latest/#install-pipenv-today).
-
-To create the env and install the required libraries (once you have pipenv installed) you can just do:
-```
-pipenv install
-```
-
-Then to activate the env and launch jupyter from this env you can do something like the below two commands:
-```
-pipenv shell
-jupyter lab
-```
+## Conclusion:
+The recommended scenario for maximum revenue increase involves increasing the vertical drop, adding a chair lift, a run, and 2 acres of snow making. This could raise ticket prices by 12%, resulting in a net revenue increase of $15,528,841 after deducting operating costs. Due to data limitations, the model doesn't recommend closing runs or dynamic ticket pricing without information on operating costs per run and weekday ticket prices.
